@@ -1,13 +1,34 @@
-﻿To complete the installation of System.Web.Optimization.React, you need to create one or more
-bundles containing your JSX files:
-
-// In BundleConfig.cs
-bundles.Add(new BabelBundle("~/bundles/main").Include(
-    // Add your JSX files here
-    "~/Content/HelloWorld.react.jsx",
-    "~/Content/AnythingElse.react.jsx",
-    // You can include regular JavaScript files in the bundle too
-    "~/Content/ajax.js",
-));
-
-Please refer to http://reactjs.net/ for more details, usage examples and sample code.
+﻿for redux app:
+	- npm init in root
+	- npm install --save react redux react-redux 
+	- npm install --save-dev babel-loader babel-core babel-preset-es2015 babel-preset-react
+	
+	- add "scripts": { "webpack": "webpack -w" } to package.json in root.
+	
+	- add webpack.config.js with the following
+		module.exports = {
+			entry: './App/index.js',  
+			output: {
+				filename: 'Scripts/redux-app.js'
+			},
+			resolve: {
+				extensions: ['', '.Webpack.js', '.web.js', '.js']
+			},
+			module: {
+				loaders: [
+					{
+						test: /\.js?$/,
+						exclude: /(node_modules|bower_components)/,
+						loader: 'babel-loader',
+						query: {
+							presets: ['es2015', 'react']
+						}
+					}
+				]
+			}
+		}
+		
+	- install npm task runner extension in vs (extensions and updates)
+	- link bundle (redux-app) in layout.cshtml
+	
+	
