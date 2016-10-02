@@ -29,6 +29,10 @@
 		}
 		
 	- install npm task runner extension in vs (extensions and updates)
-	- link bundle (redux-app) in layout.cshtml
+	- link bundle (redux-app) in layout.cshtml / wherever you need the app to show up.
+	- find task runner explorer in VIEW -> Other Windows -> Task Runner Explorer (or right-click package.json)
+	- hit refresh and Custom > webpack should appear
+	- right-click, run.
+
 	
 	
